@@ -103,11 +103,14 @@ public class App {
 			           			{
 			           				inLine = inFile3.readLine();
 			           				
-			           				
+			           				String[] readDataArray = inLine.split(" {1,100}");
+			           				System.out.println( readDataArray );
 			           				
 			           				for( int k = 0; k < (lineCount - 1) - j; k++)
 			           				{
-				           				String readData = inLine.substring( 30 + (k * 15) + (j * 15), 30 + (k * 15) + (j * 15) + 6);
+				           				//String readData = inLine.substring( 30 + (k * 15) + (j * 15), 30 + (k * 15) + (j * 15) + 6);
+				           				String readData = readDataArray[ k+ j + 2 ];
+				           				
 				           				System.out.println( readData );
 				           				
 				           				Row curRow = sheet1.getRow( rowCount );
@@ -123,6 +126,7 @@ public class App {
 				           				
 				           				rowCount++;
 			           				}
+			           				
 			           			}
 			           			
 			           			
